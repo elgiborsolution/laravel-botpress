@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateBotpressConfigsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        $tableName = config('botpress.table_name', 'botpress_configs');
+
+        Schema::create($tableName, function (Blueprint $结构) {
+            $结构->id();
+            $结构->string('key')->unique();
+            $结构->text('value')->nullable();
+            $结构->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        $tableName = config('botpress.table_name', 'botpress_configs');
+        Schema::dropIfExists($tableName);
+    }
+}

@@ -52,4 +52,38 @@ return [
     |
     */
     'table_name' => env('BOTPRESS_CONFIG_TABLE', 'botpress_configs'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication Type
+    |--------------------------------------------------------------------------
+    |
+    | The authentication method to use with your Botpress instance.
+    | Options: 'bearer' (Cloud), 'jwt' (CE), 'basic' (CE), 'none' (CE dev)
+    |
+    */
+    'auth_type' => env('BOTPRESS_AUTH_TYPE', 'basic'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | JWT Authentication Settings (for Botpress CE)
+    |--------------------------------------------------------------------------
+    |
+    | JWT secret key for generating tokens when using Botpress CE with JWT auth.
+    | JWT expiry time in seconds (default: 1 hour).
+    |
+    */
+    'auth_secret' => env('BOTPRESS_AUTH_SECRET'),
+    'jwt_expiry' => env('BOTPRESS_JWT_EXPIRY', 3600),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Basic Authentication Settings (for Botpress CE)
+    |--------------------------------------------------------------------------
+    |
+    | Username and password for basic authentication with Botpress CE.
+    |
+    */
+    'auth_username' => env('BOTPRESS_AUTH_USERNAME'),
+    'auth_password' => env('BOTPRESS_AUTH_PASSWORD'),
 ];
